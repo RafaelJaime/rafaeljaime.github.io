@@ -1,9 +1,9 @@
 {{- if .IsTranslated }}
 <div class="lang-switch">
-  <span class="lang-switch-label">{{ if eq .Lang "es" }}Idiomas{{ else }}Languages{{ end }}:</span>
+  <span class="lang-switch-label">{{ if eq .Language.Lang "es" }}Idiomas{{ else }}Languages{{ end }}:</span>
   {{- range .Translations }}
     <a href="{{ .Permalink }}" class="lang-link">
-      {{- if eq .Lang "en" }}�🇸 EN{{ else if eq .Lang "es" }}�🇸 ES{{ end }}
+      {{- if eq .Language.Lang "en" }}EN{{ else if eq .Language.Lang "es" }}ES{{ end }}
     </a>
   {{- end }}
 </div>
