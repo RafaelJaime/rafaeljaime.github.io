@@ -1,7 +1,40 @@
-/.DS_Store
-/_site
-/assets/css/style.css
-/assets/js/scale.fix.js
+# Hugo build artifacts
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
 
-Gemfile
-Gemfile.lock
+# Hugo cache
+/.hugo_build.lock
+
+# OS generated files
+/.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*~
+*.tmp
+*.bak
+
+# Jekyll (legacy)
+/_site
+
+# Dependency files
+/node_modules/
+
+# IDE files
+/.vscode/
+/.idea/
+*.swp
+*.swo
+
+# Log files
+*.log
+
+# Backup files
+/backup/

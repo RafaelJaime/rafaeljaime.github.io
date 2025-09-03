@@ -1,0 +1,39 @@
+{{- if .IsTranslated }}
+<div class="lang-switch">
+  <span class="lang-switch-label">{{ if eq .Lang "es" }}Idiomas{{ else }}Languages{{ end }}:</span>
+  {{- range .Translations }}
+    <a href="{{ .Permalink }}" class="lang-link">
+      {{- if eq .Lang "en" }}�🇸 EN{{ else if eq .Lang "es" }}�🇸 ES{{ end }}
+    </a>
+  {{- end }}
+</div>
+<style>
+.lang-switch {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--theme);
+  text-align: center;
+}
+
+.lang-switch-label {
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.lang-link {
+  margin: 0 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  background: var(--primary);
+  color: var(--secondary);
+  transition: all 0.3s ease;
+}
+
+.lang-link:hover {
+  background: var(--secondary);
+  color: var(--primary);
+}
+</style>
+{{- end }}

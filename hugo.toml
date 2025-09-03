@@ -1,0 +1,110 @@
+baseURL = 'https://rafaeljaime.github.io/'
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = true
+theme = 'PaperMod'
+
+# Configuración de idiomas
+[languages]
+  [languages.en]
+    title = "Rafael Jaime's Portfolio"
+    languageCode = 'en-US'
+    languageName = "English"
+    weight = 1
+    
+    [languages.en.params]
+      author = "Rafael Jaime"
+      description = "Rafael Jaime's personal portfolio"
+      ShowReadingTime = true
+      ShowShareButtons = true
+      ShowPostNavLinks = true
+      ShowBreadCrumbs = true
+      ShowCodeCopyButtons = true
+      ShowWordCount = true
+      ShowRssButtonInSectionTermList = true
+      UseHugoToc = true
+      disableSpecial1stPost = false
+      disableScrollToTop = false
+      comments = false
+      hidemeta = false
+      hideSummary = false
+      showtoc = false
+      tocopen = false
+
+    [languages.en.params.homeInfoParams]
+      Title = "Hi, I'm Rafael Jaime 👋"
+      Content = "Welcome to my personal portfolio. Here you'll find my projects and experiences."
+
+    [[languages.en.params.socialIcons]]
+      name = "github"
+      url = "https://github.com/RafaelJaime"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "home"
+        name = "Home"
+        url = "/en/"
+        weight = 10
+      
+      [[languages.en.menu.main]]
+        identifier = "projects"
+        name = "Projects"
+        url = "/en/projects/"
+        weight = 20
+      
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/en/about/"
+        weight = 30
+
+  [languages.es]
+    title = "Portfolio de Rafael Jaime"
+    languageCode = 'es-ES'
+    languageName = "Español"
+    weight = 2
+    
+    [languages.es.params]
+      author = "Rafael Jaime"
+      description = "Portfolio personal de Rafael Jaime"
+      ShowReadingTime = true
+      ShowShareButtons = true
+      ShowPostNavLinks = true
+      ShowBreadCrumbs = true
+      ShowCodeCopyButtons = true
+      ShowWordCount = true
+      ShowRssButtonInSectionTermList = true
+      UseHugoToc = true
+      disableSpecial1stPost = false
+      disableScrollToTop = false
+      comments = false
+      hidemeta = false
+      hideSummary = false
+      showtoc = false
+      tocopen = false
+
+    [languages.es.params.homeInfoParams]
+      Title = "Hola, soy Rafael Jaime 👋"
+      Content = "Bienvenido a mi portfolio personal. Aquí encontrarás mis proyectos y experiencias."
+
+    [[languages.es.params.socialIcons]]
+      name = "github"
+      url = "https://github.com/RafaelJaime"
+
+    [languages.es.menu]
+      [[languages.es.menu.main]]
+        identifier = "home"
+        name = "Inicio"
+        url = "/es/"
+        weight = 10
+      
+      [[languages.es.menu.main]]
+        identifier = "projects"
+        name = "Proyectos"
+        url = "/es/projects/"
+        weight = 20
+      
+      [[languages.es.menu.main]]
+        identifier = "about"
+        name = "Acerca de"
+        url = "/es/about/"
+        weight = 30
