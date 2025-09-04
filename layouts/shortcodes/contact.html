@@ -1,0 +1,7 @@
+{{- $socialNetworks := .Site.Data.social.networks -}}
+<h2>📬 Contact</h2>
+<ul>
+{{- range $network := $socialNetworks }}
+<li>{{ $network.emoji }} {{ $network.name }}: <a href="{{ $network.url }}" target="_blank" rel="noopener noreferrer">{{ $network.username }}</a></li>
+{{- end }}
+</ul>

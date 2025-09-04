@@ -1,0 +1,108 @@
+{{- $socialNetworks := .Site.Data.social.networks -}}
+
+<style>
+/* Estilos personalizados para los iconos de redes sociales */
+.share-buttons {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    gap: 15px;
+}
+
+.share-buttons li {
+    display: inline-flex;
+    transition: all 0.3s ease;
+}
+
+.share-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.share-buttons a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.share-buttons a:hover::before {
+    transform: translateX(100%);
+}
+
+.share-buttons a svg {
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+/* Hover effects generales */
+.share-buttons a:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effects específicos por red social - Generados dinámicamente */
+{{- range $index, $network := $socialNetworks }}
+.share-buttons li:nth-child({{ add $index 1 }}) a:hover {
+    background-color: {{ $network.color }};
+    color: white;
+}
+{{- end }}
+
+/* Efecto de pulsación en mobile */
+@media (max-width: 768px) {
+    .share-buttons a:active {
+        transform: translateY(-1px) scale(1.05);
+        transition: transform 0.1s ease;
+    }
+}
+
+/* Animación de entrada - Generada dinámicamente */
+.share-buttons li {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+{{- range $index, $network := $socialNetworks }}
+.share-buttons li:nth-child({{ add $index 1 }}) { 
+    animation-delay: {{ mul (add $index 1) 0.1 }}s; 
+}
+{{- end }}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto de brillo adicional */
+.share-buttons a:hover svg {
+    filter: brightness(1.2);
+}
+</style>
+
+<ul class="share-buttons">
+    {{- range $index, $network := $socialNetworks }}
+    <!-- {{ $network.name }} -->
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="{{ $network.label }}" href="{{ $network.url }}">
+            <img src="{{ $network.icon }}" alt="{{ $network.name }}" height="30px" width="30px" />
+        </a>
+    </li>
+    {{- end }}
+</ul>

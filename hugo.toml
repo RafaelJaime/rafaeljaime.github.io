@@ -12,6 +12,7 @@ theme = 'PaperMod'
 # Configuración global
 [params]
   mainSections = ["projects"]
+  ShowShareButtons = true
 
 # Configuración de idiomas
 [languages]
@@ -39,6 +40,13 @@ theme = 'PaperMod'
       hideSummary = false
       showtoc = false
       tocopen = false
+      
+      [languages.en.params.assets]
+        disableHLJS = false
+        disableFingerprinting = false
+        
+        [[languages.en.params.assets.css]]
+          src = "/css/custom.css"
 
     [languages.en.params.homeInfoParams]
       Title = "Hi, I'm Rafael Jaime 👋"
@@ -91,6 +99,13 @@ theme = 'PaperMod'
       hideSummary = false
       showtoc = false
       tocopen = false
+      
+      [languages.es.params.assets]
+        disableHLJS = false
+        disableFingerprinting = false
+        
+        [[languages.es.params.assets.css]]
+          src = "/css/custom.css"
 
     [languages.es.params.homeInfoParams]
       Title = "Hola, soy Rafael Jaime 👋"
