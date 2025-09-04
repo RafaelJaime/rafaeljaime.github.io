@@ -2,6 +2,7 @@
 date = '2025-09-03T12:42:08+02:00'
 draft = false
 title = 'Proyectos'
+translationKey = 'projects'
 +++
 
 # Mis Proyectos

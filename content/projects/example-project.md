@@ -4,6 +4,7 @@ draft = false
 title = 'Example Project'
 description = 'An example project to showcase my skills'
 tags = ['Web Development', 'JavaScript', 'React']
+translationKey = 'example-project'
 +++
 
 ## Description

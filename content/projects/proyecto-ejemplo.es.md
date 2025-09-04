@@ -4,6 +4,7 @@ draft = false
 title = 'Proyecto Ejemplo'
 description = 'Un proyecto de ejemplo para demostrar mis habilidades'
 tags = ['Web Development', 'JavaScript', 'React']
+translationKey = 'example-project'
 +++
 
 ## Descripción
