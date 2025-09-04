@@ -1,0 +1,7 @@
+{{- $socialNetworks := .Site.Data.social.networks -}}
+
+## 📬 Contact
+
+{{- range $network := $socialNetworks }}
+- {{ $network.emoji }} {{ $network.name }}: [{{ $network.username }}]({{ $network.url }})  
+{{- end }}

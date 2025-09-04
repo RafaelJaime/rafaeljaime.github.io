@@ -25,21 +25,36 @@ theme = 'PaperMod'
     [languages.en.params]
       author = "Rafael Jaime"
       description = "Rafael Jaime's personal portfolio"
-      ShowReadingTime = true
+      ShowReadingTime = false
       ShowShareButtons = true
       ShowPostNavLinks = true
       ShowBreadCrumbs = true
       ShowCodeCopyButtons = true
-      ShowWordCount = true
+      ShowWordCount = false
       ShowRssButtonInSectionTermList = true
       UseHugoToc = true
       disableSpecial1stPost = false
       disableScrollToTop = false
       comments = false
-      hidemeta = false
+      hidemeta = true
       hideSummary = false
       showtoc = false
       tocopen = false
+      
+      [languages.en.params.profileMode]
+        enabled = true
+        title = "Rafael Jaime"
+        subtitle = "Full Stack Developer & Software Engineer"
+        imageUrl = ""
+        imageTitle = "Rafael Jaime"
+        
+        [[languages.en.params.profileMode.buttons]]
+          name = "Projects"
+          url = "/en/projects/"
+        
+        [[languages.en.params.profileMode.buttons]]
+          name = "About"
+          url = "/en/about/"
       
       [languages.en.params.assets]
         disableHLJS = false
@@ -48,12 +63,16 @@ theme = 'PaperMod'
         [[languages.en.params.assets.css]]
           src = "/css/custom.css"
 
-    [languages.en.params.homeInfoParams]
-      Title = "Hi, I'm Rafael Jaime 👋"
-      Content = "Welcome to my personal portfolio. Here you'll find my projects and experiences."
-
     [[languages.en.params.socialIcons]]
       name = "github"
+      url = "https://github.com/RafaelJaime"
+    
+    [[languages.en.params.socialIcons]]
+      name = "linkedin"
+      url = "https://github.com/RafaelJaime"
+    
+    [[languages.en.params.socialIcons]]
+      name = "email"
       url = "https://github.com/RafaelJaime"
 
     [languages.en.menu]
@@ -84,21 +103,36 @@ theme = 'PaperMod'
     [languages.es.params]
       author = "Rafael Jaime"
       description = "Portfolio personal de Rafael Jaime"
-      ShowReadingTime = true
+      ShowReadingTime = false
       ShowShareButtons = true
       ShowPostNavLinks = true
       ShowBreadCrumbs = true
       ShowCodeCopyButtons = true
-      ShowWordCount = true
+      ShowWordCount = false
       ShowRssButtonInSectionTermList = true
       UseHugoToc = true
       disableSpecial1stPost = false
       disableScrollToTop = false
       comments = false
-      hidemeta = false
+      hidemeta = true
       hideSummary = false
       showtoc = false
       tocopen = false
+      
+      [languages.es.params.profileMode]
+        enabled = true
+        title = "Rafael Jaime"
+        subtitle = "Desarrollador Full Stack e Ingeniero de Software"
+        imageUrl = ""
+        imageTitle = "Rafael Jaime"
+        
+        [[languages.es.params.profileMode.buttons]]
+          name = "Proyectos"
+          url = "/es/projects/"
+        
+        [[languages.es.params.profileMode.buttons]]
+          name = "Acerca de"
+          url = "/es/about/"
       
       [languages.es.params.assets]
         disableHLJS = false
@@ -106,10 +140,6 @@ theme = 'PaperMod'
         
         [[languages.es.params.assets.css]]
           src = "/css/custom.css"
-
-    [languages.es.params.homeInfoParams]
-      Title = "Hola, soy Rafael Jaime 👋"
-      Content = "Bienvenido a mi portfolio personal. Aquí encontrarás mis proyectos y experiencias."
 
     [[languages.es.params.socialIcons]]
       name = "github"
