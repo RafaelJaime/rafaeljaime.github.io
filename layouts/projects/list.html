@@ -1,0 +1,17 @@
+{{ define "main" }}
+<header>
+    <h1>{{ .Title }}</h1>
+</header>
+
+<div class="content">
+    {{ .Content }}
+    
+    <div class="projects-list">
+        {{ range where .Site.RegularPages "Section" "projects" }}
+            {{ if ne .File.BaseFileName "_index" }}
+                {{ partial "post-entry.html" . }}
+            {{ end }}
+        {{ end }}
+    </div>
+</div>
+{{ end }}
