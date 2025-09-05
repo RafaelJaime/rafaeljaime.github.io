@@ -1,7 +1,6 @@
 {{- $socialNetworks := .Site.Data.social.networks -}}
 
 <style>
-/* Estilos personalizados para los iconos de redes sociales */
 .share-buttons {
     padding: 10px;
     display: flex;
@@ -25,27 +24,6 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-}
-
-.share-buttons a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
-}
-
-.share-buttons a:hover::before {
-    transform: translateX(100%);
-}
-
-.share-buttons a svg {
-    transition: all 0.3s ease;
-    z-index: 1;
 }
 
 /* Hover effects generales */
@@ -88,11 +66,6 @@
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Efecto de brillo adicional */
-.share-buttons a:hover svg {
-    filter: brightness(1.2);
 }
 </style>
 

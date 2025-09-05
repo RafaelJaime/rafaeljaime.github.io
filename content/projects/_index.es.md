@@ -5,8 +5,6 @@ title = 'Proyectos'
 translationKey = 'projects'
 +++
 
-# Mis Proyectos
-
 Aquí encontrarás una colección de mis proyectos más destacados. Cada proyecto incluye una descripción, las tecnologías utilizadas y enlaces al código fuente.
 
 ---

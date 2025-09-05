@@ -1,5 +1,5 @@
 +++
-date = '2025-09-04T00:00:00+02:00'
+date = '2020-11-26T00:00:00+01:00'
 draft = false
 title = 'Python Async Exercise'
 description = 'Practice project for asynchronous programming in Python with client/server scripts'

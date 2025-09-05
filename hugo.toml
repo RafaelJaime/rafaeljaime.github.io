@@ -69,11 +69,15 @@ theme = 'PaperMod'
     
     [[languages.en.params.socialIcons]]
       name = "linkedin"
-      url = "https://github.com/RafaelJaime"
+      url = "https://www.linkedin.com/in/rafael-jaime-moreno-665112227/"
     
     [[languages.en.params.socialIcons]]
       name = "email"
-      url = "https://github.com/RafaelJaime"
+      url = "mailto:rajaimor@gmail.com"
+    
+    [[languages.en.params.socialIcons]]
+      name = "huggingface"
+      url = "https://huggingface.co/RafaelJaime"
 
     [languages.en.menu]
       [[languages.en.menu.main]]
@@ -144,6 +148,18 @@ theme = 'PaperMod'
     [[languages.es.params.socialIcons]]
       name = "github"
       url = "https://github.com/RafaelJaime"
+    
+    [[languages.es.params.socialIcons]]
+      name = "linkedin"
+      url = "https://www.linkedin.com/in/rafael-jaime-moreno-665112227/?locale=es_ES"
+    
+    [[languages.es.params.socialIcons]]
+      name = "email"
+      url = "mailto:rajaimor@gmail.com"
+    
+    [[languages.es.params.socialIcons]]
+      name = "huggingface"
+      url = "https://huggingface.co/RafaelJaime"
 
     [languages.es.menu]
       [[languages.es.menu.main]]

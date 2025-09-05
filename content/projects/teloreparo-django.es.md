@@ -1,10 +1,11 @@
 +++
-date = '2025-09-04T00:12:00+02:00'
+tags = ['Django', 'Python', 'Backend', 'HTML', 'CSS']
+image = '/images/projects/teloreparo.PNG'
+translationKey = 'teloreparo-django'
+date = '2021-02-22T00:00:00+01:00'
 draft = false
 title = 'Teloreparo (Backend Django)'
 description = 'Aplicación backend en Django con módulos de cuentas, avisos, reparaciones y más'
-tags = ['Django', 'Python', 'Backend', 'HTML', 'CSS']
-translationKey = 'teloreparo-django'
 year = '2023'
 technologies = ['Django (Python)', 'HTML', 'CSS', 'JavaScript']
 +++
@@ -16,6 +17,7 @@ Backend Django para la aplicación Teloreparo. Estructura modular con apps como 
 ### Tecnologías utilizadas
 
 - Django (Python)
+- DjangoRestFramework
 - HTML, CSS, JS para plantillas
 
 ### Enlaces

@@ -1,9 +1,10 @@
 +++
-date = '2025-09-04T00:20:00+02:00'
+date = '2021-06-21T00:00:00+02:00'
 draft = false
 title = 'App Star Wars: Backend Django y Frontend Swift'
 description = 'Proyecto académico con backend en Django y frontend en Swift para gestión de datos Star Wars'
 tags = ['Django', 'Swift', 'Python', 'iOS', 'macOS', 'Star Wars']
+image = '/images/projects/starwarsapp.PNG'
 translationKey = 'django-swift'
 +++
 
@@ -22,3 +23,4 @@ Proyecto académico que integra un backend desarrollado en Django (Python) para 
 
 - Backend: https://github.com/RafaelJaime/PIDjango
 - Frontend: https://github.com/RafaelJaime/PISwift
+- Figma: https://www.figma.com/proto/65WhSOM0muclgbi0OtOD8d/Primer-Prototipo-pi?node-id=64-826&t=5I0QoqslLqC1nPTy-1

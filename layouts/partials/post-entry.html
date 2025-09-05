@@ -1,30 +1,142 @@
+<style>
+.entry-footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.entry-footer .footer-left {
+    flex: 1;
+    min-width: 0;
+}
+
+.entry-footer .footer-right {
+    flex-shrink: 0;
+}
+
+.entry-footer .post-date {
+    color: var(--secondary);
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.project-tags {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+}
+
+.project-tags .tag {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--primary);
+    background-color: var(--theme);
+    border: 1px solid var(--border);
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.project-tags .tag:hover {
+    background-color: var(--secondary);
+    color: var(--theme);
+}
+
+.post-entry-content {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.entry-image {
+    flex-shrink: 0;
+    width: 200px;
+}
+
+.entry-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease;
+}
+
+.entry-image img:hover {
+    transform: scale(1.02);
+}
+
+.entry-text-content {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+    .post-entry-content {
+        flex-direction: column;
+    }
+    
+    .entry-image {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .entry-footer .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .entry-footer .footer-right {
+        width: 100%;
+        text-align: right;
+    }
+}
+</style>
 
 <article class="post-entry tag-entry">
   {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
   {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">
-      {{- .Title }}
-      {{- if .Draft }}
-      <span class="entry-hint" title="Draft">
-        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" fill="currentColor">
-          <path
-            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
-        </svg>
-      </span>
+  
+  <div class="post-entry-content">
+    {{- if .Params.image }}
+    <div class="entry-image">
+      <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+    </div>
+    {{- end }}
+    
+    <div class="entry-text-content">
+      <header class="entry-header">
+        <h2 class="entry-hint-parent">
+          {{- .Title }}
+        </h2>
+      </header>
+      {{- if (ne (.Param "hideSummary") true) }}
+      <div class="entry-content">
+        <p>{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}{{ end }}</p>
+      </div>
+      <footer class="entry-footer">
+        <div class="footer-content">
+          <div class="footer-left">
+            {{ with .Params.tags }}
+            <div class="project-tags">
+                {{ range . }}
+                <span class="tag">{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+          </div>
+          <div class="footer-right">
+            {{- partial "post_date.html" . -}}
+          </div>
+        </div>
+      </footer>
       {{- end }}
-    </h2>
-  </header>
-  {{- if (ne (.Param "hideSummary") true) }}
-  <div class="entry-content">
-    <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+    </div>
   </div>
-  {{- end }}
-  {{- if not (.Param "hideMeta") }}
-  <footer class="entry-footer">
-    {{- partial "post_meta.html" . -}}
-  </footer>
-  {{- end }}
+  
   <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
 </article>
-   

@@ -1,5 +1,5 @@
 +++
-date = '2025-09-04T00:05:00+02:00'
+date = '2021-02-14T00:00:00+01:00'
 draft = false
 title = 'Laravel + Ionic Platform (DI & PDM)'
 description = 'Academic project with Laravel backend and Ionic frontend, split into DI and PDM modules'

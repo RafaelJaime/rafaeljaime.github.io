@@ -1,8 +1,8 @@
 +++
-date = '2025-09-04T00:05:00+02:00'
+date = '2021-02-14T00:00:00+01:00'
 draft = false
 title = 'Plataforma Laravel + Ionic (DI y PDM)'
-description = 'Proyecto académico con backend Laravel y frontend Ionic dividido en módulos DI y PDM'
+description = 'Proyecto académico con backend Laravel y frontend Ionic, dividido en módulos DI y PDM'
 tags = ['Laravel', 'Ionic', 'PHP', 'TypeScript', 'HTML', 'SCSS']
 translationKey = 'laravel-ionic-diypdm'
 year = '2022'
