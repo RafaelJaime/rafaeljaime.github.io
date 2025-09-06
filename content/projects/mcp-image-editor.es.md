@@ -30,25 +30,6 @@ Equipo colaborativo de tres desarrolladores trabajando juntos en todos los aspec
 - **FastMCP** - Implementación rápida del protocolo MCP
 - **OpenAI** - Modelos de lenguaje para funcionalidades inteligentes
 
-### Características Principales
-
-- **Edición Inteligente de Imágenes**: Utiliza IA para sugerir y aplicar ediciones automáticas
-- **Interfaz Colaborativa**: Permite múltiples usuarios trabajando en el mismo proyecto
-- **Integración MCP**: Implementación completa del Model Context Protocol
-- **Procesamiento en Tiempo Real**: Visualización instantánea de cambios y ediciones
-- **Múltiples Filtros y Efectos**: Amplia gama de herramientas de edición tradicionales
-- **IA Conversacional**: Interfaz de chat para comandos de edición en lenguaje natural
-
-### Funcionalidades Implementadas
-
-- Carga y guardado de imágenes en múltiples formatos
-- Filtros básicos y avanzados de OpenCV
-- Redimensionado y recorte inteligente
-- Corrección automática de color y brillo
-- Detección y mejora de objetos
-- Interfaz conversacional para edición por comandos de texto
-- Sistema de historial de cambios y deshacer/rehacer
-
 ### Resultados de la Hackathon
 
 - Implementación exitosa del protocolo MCP en un contexto de edición de imágenes

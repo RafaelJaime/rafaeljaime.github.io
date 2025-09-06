@@ -3,6 +3,9 @@ defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = true
 theme = 'PaperMod'
 
+[pagination]
+  pagerSize = 6
+
 # Permitir HTML en markdown
 [markup]
   [markup.goldmark]
@@ -61,7 +64,7 @@ theme = 'PaperMod'
         disableFingerprinting = false
         
         [[languages.en.params.assets.css]]
-          src = "/css/custom.css"
+          src = "/css/projects-filters-pagination.css"
 
     [[languages.en.params.socialIcons]]
       name = "github"
@@ -143,7 +146,7 @@ theme = 'PaperMod'
         disableFingerprinting = false
         
         [[languages.es.params.assets.css]]
-          src = "/css/custom.css"
+          src = "/css/projects-filters-pagination.css"
 
     [[languages.es.params.socialIcons]]
       name = "github"

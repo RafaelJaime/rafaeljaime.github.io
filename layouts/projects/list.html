@@ -6,12 +6,150 @@
 <div class="content">
     {{ .Content }}
     
+    <!-- Filtros por tags -->
+    <div class="tag-filters">
+        <h3>Filter by tags:</h3>
+        <div class="tags-container">
+            <a href="{{ .RelPermalink }}" class="tag-filter active">All</a>
+            {{ $allTags := slice }}
+            {{ range where .Site.RegularPages "Section" "projects" }}
+                {{ if ne .File.BaseFileName "_index" }}
+                    {{ if eq .Language.Lang $.Language.Lang }}
+                        {{ range .Params.tags }}
+                            {{ $allTags = $allTags | append . }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            {{ range ($allTags | uniq | sort) }}
+                {{ $tagURL := printf "/%s/tags/%s" $.Language.Lang (. | urlize) }}
+                <a href="{{ $tagURL | relURL }}" class="tag-filter">{{ . }}</a>
+            {{ end }}
+        </div>
+        <button class="show-more-tags" id="showMoreTags">
+            <span class="show-text">Mostrar más</span>
+            <span class="hide-text" style="display: none;">Mostrar menos</span>
+        </button>
+    </div>
+    
     <div class="projects-list">
-        {{ range where .Site.RegularPages "Section" "projects" }}
+        {{ $paginator := .Paginate (where .Site.RegularPages "Section" "projects") }}
+        {{ range $paginator.Pages }}
             {{ if ne .File.BaseFileName "_index" }}
-                {{ partial "post-entry.html" . }}
+                <div class="project-item" data-tags="{{ range .Params.tags }}{{ . | urlize }} {{ end }}">
+                    {{ partial "post-entry.html" . }}
+                </div>
             {{ end }}
         {{ end }}
     </div>
+    
+    <!-- Paginación -->
+    {{ if gt $paginator.TotalPages 1 }}
+    <div class="pagination">
+        {{ if $paginator.HasPrev }}
+            <a href="{{ $paginator.Prev.URL }}" class="pagination-btn prev">← Previous</a>
+        {{ end }}
+        
+        <div class="pagination-numbers">
+            {{ range $paginator.Pagers }}
+                {{ if eq . $paginator }}
+                    <span class="pagination-number current">{{ .PageNumber }}</span>
+                {{ else }}
+                    <a href="{{ .URL }}" class="pagination-number">{{ .PageNumber }}</a>
+                {{ end }}
+            {{ end }}
+        </div>
+        
+        {{ if $paginator.HasNext }}
+            <a href="{{ $paginator.Next.URL }}" class="pagination-btn next">Next →</a>
+        {{ end }}
+    </div>
+    {{ end }}
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tagFilters = document.querySelectorAll('.tag-filter');
+    const showMoreBtn = document.getElementById('showMoreTags');
+    const tagsContainer = document.querySelector('.tags-container');
+    
+    // Inicializar vista colapsada de tags
+    function initializeTags() {
+        const allTags = Array.from(tagFilters);
+        const visibleTags = allTags.slice(0, 6); // Mostrar solo los primeros 6 tags (incluyendo "All")
+        const hiddenTags = allTags.slice(6);
+        
+        // Ocultar tags adicionales
+        hiddenTags.forEach(tag => {
+            tag.style.display = 'none';
+        });
+        
+        // Mostrar/ocultar botón según sea necesario
+        if (showMoreBtn && hiddenTags.length === 0) {
+            showMoreBtn.style.display = 'none';
+        }
+    }
+    
+    // Manejar clic en "Mostrar más/menos"
+    if (showMoreBtn) {
+        showMoreBtn.addEventListener('click', function() {
+            const isExpanded = tagsContainer.classList.contains('expanded');
+            const showText = this.querySelector('.show-text');
+            const hideText = this.querySelector('.hide-text');
+            
+            if (isExpanded) {
+                // Colapsar
+                tagsContainer.classList.remove('expanded');
+                tagFilters.forEach((tag, index) => {
+                    if (index >= 6) {
+                        tag.style.display = 'none';
+                    }
+                });
+                if (showText) showText.style.display = 'inline';
+                if (hideText) hideText.style.display = 'none';
+            } else {
+                // Expandir
+                tagsContainer.classList.add('expanded');
+                tagFilters.forEach(tag => {
+                    tag.style.display = 'inline-block';
+                });
+                if (showText) showText.style.display = 'none';
+                if (hideText) hideText.style.display = 'inline';
+            }
+        });
+    }
+    
+    // Marcar tag activo basado en la URL actual
+    function markActiveTag() {
+        const currentPath = window.location.pathname;
+        
+        tagFilters.forEach(tag => {
+            tag.classList.remove('active');
+            
+            // Si estamos en la página de proyectos principal, marcar "All" como activo
+            if (currentPath.includes('/projects/') && !currentPath.includes('/tags/')) {
+                if (tag.textContent.trim() === 'All') {
+                    tag.classList.add('active');
+                }
+            }
+            // Si estamos en una página de tag específico, marcar ese tag como activo
+            else if (currentPath.includes('/tags/')) {
+                // Extraer el nombre del tag de la URL, considerando idiomas
+                // Puede ser /tags/tagname o /es/tags/tagname
+                const tagMatch = currentPath.match(/\/tags\/([^\/]+)/);
+                if (tagMatch && tag.href) {
+                    const tagFromUrl = tagMatch[1];
+                    if (tag.href.includes(`/tags/${tagFromUrl}`)) {
+                        tag.classList.add('active');
+                    }
+                }
+            }
+        });
+    }
+    
+    // Inicializar
+    initializeTags();
+    markActiveTag();
+});
+</script>
 {{ end }}
