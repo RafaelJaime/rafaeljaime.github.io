@@ -1,4 +1,14 @@
 <style>
+.post-entry {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.post-entry:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
 .entry-footer .footer-content {
     display: flex;
     justify-content: space-between;

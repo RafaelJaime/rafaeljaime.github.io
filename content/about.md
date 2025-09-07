@@ -5,7 +5,6 @@ title = 'About'
 translationKey = 'about'
 +++
 
-# 👋 About Me
 
 Hi! I'm **Rafael Jaime**, a developer passionate about technology, innovation and continuous learning.  
 I love creating apps that solve real problems and experimenting with new tools to push my skills further 🚀.
