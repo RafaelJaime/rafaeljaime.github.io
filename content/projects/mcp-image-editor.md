@@ -4,7 +4,7 @@ draft = false
 title = 'MCP Image Editor - Hugging Face Hackathon'
 description = 'Collaborative image editor developed during Hugging Face MCP hackathon, utilizing Model Context Protocol for intelligent image editing capabilities'
 tags = ['MCP', 'Hugging Face', 'OpenCV', 'Gradio', 'LangChain', 'FastMCP', 'OpenAI', 'Image Processing', 'Hackathon']
-image = '/images/projects/mcp-image-editor.png'
+image = '/images/projects/mcp-image-editor.PNG'
 translationKey = 'mcp-image-editor'
 +++
 

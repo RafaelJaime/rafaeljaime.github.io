@@ -4,7 +4,7 @@ draft = false
 title = 'SAS Certification Leaderboard'
 description = 'Automated SAS exam evaluation system using LLMs, resulting in a leaderboard and fine-tuned Llama 3.3 70B model with DeepResearch from Claude'
 tags = ['AI', 'Machine Learning', 'Hugging Face', 'LLM', 'SAS', 'Llama', 'Fine-tuning', 'Claude', 'DeepResearch']
-image = '/images/projects/sas-leaderboard.png'
+image = '/images/projects/sas-leaderboard.PNG'
 translationKey = 'sas-leaderboard'
 +++
 
