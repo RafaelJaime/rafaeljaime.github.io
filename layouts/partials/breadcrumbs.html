@@ -1,0 +1,42 @@
+{{- if (.Param "ShowBreadCrumbs") -}}
+<div class="breadcrumbs">
+    {{- $url := replace .Parent.Permalink (printf "%s" site.Home.Permalink) "" }}
+    {{- $lang_url := strings.TrimPrefix (printf "%s/" .Lang) $url -}}
+
+    {{- /* <a href="{{ "" | absLangURL }}">{{ i18n "home" | default "Home" }}</a> */ -}}
+    {{- $isTagsPage := false -}}
+    {{- if or (eq .Kind "term") (eq .Kind "taxonomy") -}}
+        {{- if eq .Type "tags" -}}
+            {{- $isTagsPage = true -}}
+        {{- end -}}
+    {{- end -}}
+    
+    {{- if $isTagsPage -}}
+        {{- /* Si estamos en tags, mostrar Projects primero */ -}}
+        {{- $projects_section := site.GetPage (printf "/%s/projects" .Lang) -}}
+        {{- if not $projects_section -}}
+            {{- $projects_section = site.GetPage "projects" -}}
+        {{- end -}}
+        {{- if $projects_section -}}
+            <a href="{{ $projects_section.Permalink }}">{{ $projects_section.Title | default "Projects" }}</a>
+        {{- end -}}
+        {{- print "&nbsp;»&nbsp;" | safeHTML -}}
+        <a href="{{ .Parent.Permalink }}">Tags</a>
+    {{- else -}}
+        {{- /* Breadcrumb normal para otras páginas */ -}}
+        {{- $scratch := newScratch }}
+        {{- $first := true }}
+        {{- range $index, $element := split $lang_url "/" }}
+
+        {{- $scratch.Add "path" (printf "%s/" $element )}}
+        {{- $bc_pg := site.GetPage ($scratch.Get "path") -}}
+
+        {{- if (and ($bc_pg) (gt (len . ) 0))}}
+        {{- if not $first }}{{- print "&nbsp;»&nbsp;" | safeHTML -}}{{- end -}}<a href="{{ $bc_pg.Permalink }}">{{ $bc_pg.Name }}</a>
+        {{- $first = false }}
+        {{- end }}
+
+        {{- end -}}
+    {{- end -}}
+</div>
+{{- end -}}
