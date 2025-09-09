@@ -29,7 +29,7 @@ I love creating apps that solve real problems and experimenting with new tools t
 📅 Mar 2021 – Jun 2021  
 - Developed apps with **Swift** & **Objective-C**  
 - Focused on UI, native integrations and CocoaPods  
-- Worked mainly with **MVC**  
+- Worked mainly with **MVC**
 
 ---
 
