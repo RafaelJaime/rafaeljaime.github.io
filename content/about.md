@@ -6,7 +6,7 @@ translationKey = 'about'
 
 
 
-<div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem;">
+<div style="display: flex; align-items: center; gap: 2rem;">
 	<img src="/images/profile.png" alt="Rafael Jaime" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid #eee;" />
 	<div>
 		<h1 style="margin: 0; font-size: 2.2rem; font-weight: bold;">Rafael Jaime Moreno</h1>
@@ -17,11 +17,11 @@ translationKey = 'about'
 	</div>
 </div>
 
-<h2 style="font-size: 1.8rem; color: var(--primary); text-align: left; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">
+<h2 style="font-size: 1.8rem; color: var(--primary); text-align: left; border-bottom: 1px solid var(--border);">
   Technical Skills
 </h2>
 
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin: 2rem 0 3rem; color: var(--content);">
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; color: var(--content);">
 
   <!-- Languages -->
   <div>
