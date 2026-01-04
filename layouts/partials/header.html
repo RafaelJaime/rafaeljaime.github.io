@@ -140,6 +140,19 @@
         {{- $currentPage := . }}
         <ul id="menu">
             {{- range site.Menus.main }}
+            {{- if eq .Name "About" }}
+            <li>
+                {{- if eq $currentPage.Lang "es" }}
+                <a href="/cv/Jaime_Moreno,_Rafael_-_CV_ES_CV.pdf" target="_blank" rel="noopener noreferrer" title="Descargar CV">
+                    <span>CV</span>
+                </a>
+                {{- else }}
+                <a href="/cv/Jaime_Moreno,_Rafael_-_CV_EN_CV.pdf" target="_blank" rel="noopener noreferrer" title="Download CV">
+                    <span>CV</span>
+                </a>
+                {{- end }}
+            </li>
+            {{- end }}
             {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
             {{- $page_url:= $currentPage.Permalink | absLangURL }}
             {{- $is_search := eq (site.GetPage .KeyName).Layout `search` }}
