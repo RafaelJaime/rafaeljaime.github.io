@@ -96,6 +96,12 @@ theme = 'PaperMod'
         weight = 20
       
       [[languages.en.menu.main]]
+        identifier = "cv"
+        name = "CV"
+        url = "../cv/Jaime_Moreno,_Rafael_-_CV_EN_CV.pdf"
+        weight = 25
+      
+      [[languages.en.menu.main]]
         identifier = "about"
         name = "About"
         url = "/en/about/"
@@ -176,6 +182,12 @@ theme = 'PaperMod'
         name = "Proyectos"
         url = "/es/projects/"
         weight = 20
+      
+      [[languages.es.menu.main]]
+        identifier = "cv"
+        name = "CV"
+        url = "../cv/Jaime_Moreno,_Rafael_-_CV_ES_CV.pdf"
+        weight = 25
       
       [[languages.es.menu.main]]
         identifier = "about"
