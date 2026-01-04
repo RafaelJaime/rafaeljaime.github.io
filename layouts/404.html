@@ -1,0 +1,24 @@
+{{- define "main" }}
+<div class="main">
+  <article class="post-single">
+    <div class="post-content">
+      <p style="font-size: 1.2em; margin: 2em 0;">
+        {{ if eq .Lang "es" }}
+          Lo sentimos, la página que buscas no existe.
+        {{ else }}
+          Sorry, the page you are looking for does not exist.
+        {{ end }}
+      </p>
+      <p>
+        <a href="{{ "/" | relLangURL }}" style="text-decoration: none;">
+          {{ if eq .Lang "es" }}
+            ← Volver al inicio
+          {{ else }}
+            ← Go back to home
+          {{ end }}
+        </a>
+      </p>
+    </div>
+  </article>
+</div>
+{{- end }}{{/* end main */ -}}
