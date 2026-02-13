@@ -138,12 +138,21 @@
             </div>
         </div>
         {{- $currentPage := . }}
+        {{- /* Scan static/cv for PDFs matching current language */ -}}
+        {{- $cvItems := slice -}}
+        {{- $langToken := cond (eq .Lang "en") "_EN_" "_ES_" -}}
+        {{- range readDir "static/cv" -}}
+            {{- if and (not .IsDir) (strings.HasSuffix .Name ".pdf") (strings.Contains .Name $langToken) -}}
+                {{- $label := replaceRE `^.*_([^_]+)\.pdf$` "$1" .Name -}}
+                {{- $cvItems = $cvItems | append (dict "label" $label "file" .Name) -}}
+            {{- end -}}
+        {{- end -}}
         <ul id="menu">
             {{- range site.Menus.main }}
             {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
             {{- $page_url:= $currentPage.Permalink | absLangURL }}
             {{- $is_search := eq (site.GetPage .KeyName).Layout `search` }}
-            {{- if .HasChildren }}
+            {{- if eq .Identifier "cv" }}
             <li class="menu-dropdown">
                 <button class="menu-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
                     <span>{{ .Name }}</span>
@@ -152,10 +161,10 @@
                     </svg>
                 </button>
                 <ul class="menu-dropdown-list">
-                    {{- range .Children }}
+                    {{- range $cvItems }}
                     <li>
-                        <a href="{{ .URL | absURL }}" download>
-                            {{- .Name -}}
+                        <a href="{{ printf "/cv/%s" .file | absURL }}" download>
+                            {{- .label -}}
                         </a>
                     </li>
                     {{- end }}

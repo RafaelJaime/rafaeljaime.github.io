@@ -100,20 +100,6 @@ theme = 'PaperMod'
         name = "CV"
         url = "#"
         weight = 25
-
-      [[languages.en.menu.main]]
-        identifier = "cv-dev"
-        name = "DEV"
-        parent = "cv"
-        url = "/cv/Jaime_Moreno,_Rafael_-_CV_EN_DEV.pdf"
-        weight = 1
-
-      [[languages.en.menu.main]]
-        identifier = "cv-ios"
-        name = "iOS"
-        parent = "cv"
-        url = "/cv/Jaime_Moreno,_Rafael_-_CV_EN_iOS.pdf"
-        weight = 2
       
       [[languages.en.menu.main]]
         identifier = "about"
@@ -202,20 +188,6 @@ theme = 'PaperMod'
         name = "CV"
         url = "#"
         weight = 25
-
-      [[languages.es.menu.main]]
-        identifier = "cv-dev"
-        name = "DEV"
-        parent = "cv"
-        url = "/cv/Jaime_Moreno,_Rafael_-_CV_ES_DEV.pdf"
-        weight = 1
-
-      [[languages.es.menu.main]]
-        identifier = "cv-ios"
-        name = "iOS"
-        parent = "cv"
-        url = "/cv/Jaime_Moreno,_Rafael_-_CV_ES_iOS.pdf"
-        weight = 2
       
       [[languages.es.menu.main]]
         identifier = "about"
