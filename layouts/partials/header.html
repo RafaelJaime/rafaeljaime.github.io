@@ -143,6 +143,25 @@
             {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
             {{- $page_url:= $currentPage.Permalink | absLangURL }}
             {{- $is_search := eq (site.GetPage .KeyName).Layout `search` }}
+            {{- if .HasChildren }}
+            <li class="menu-dropdown">
+                <button class="menu-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                    <span>{{ .Name }}</span>
+                    <svg class="menu-dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <ul class="menu-dropdown-list">
+                    {{- range .Children }}
+                    <li>
+                        <a href="{{ .URL | absURL }}" download>
+                            {{- .Name -}}
+                        </a>
+                    </li>
+                    {{- end }}
+                </ul>
+            </li>
+            {{- else }}
             <li>
                 <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
                 {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}>
@@ -162,6 +181,27 @@
                 </a>
             </li>
             {{- end }}
+            {{- end }}
         </ul>
     </nav>
 </header>
+<script>
+document.querySelectorAll('.menu-dropdown-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var dropdown = btn.closest('.menu-dropdown');
+        var isOpen = dropdown.classList.contains('open');
+        document.querySelectorAll('.menu-dropdown.open').forEach(function(d) {
+            d.classList.remove('open');
+        });
+        if (!isOpen) dropdown.classList.add('open');
+    });
+});
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.menu-dropdown')) {
+        document.querySelectorAll('.menu-dropdown.open').forEach(function(d) {
+            d.classList.remove('open');
+        });
+    }
+});
+</script>
