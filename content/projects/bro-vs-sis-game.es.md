@@ -38,6 +38,14 @@ Este juego utiliza la librería [Godot RL Agents](https://github.com/edbeeching/
 - Sistema de recompensas configurable
 - Exportación de modelos entrenados
 
+### Jugar
+
+<div style="position:relative;width:100%;padding-top:56.25%;overflow:hidden;margin:1rem auto;">
+  <iframe src="https://rafaeljaime.github.io/Bro-VS-SiS-game/" title="Juego Bro VS SiS" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen></iframe>
+</div>
+
+[Jugar en pantalla completa](https://rafaeljaime.github.io/Bro-VS-SiS-game/)
+
 ### Enlaces
 
 - [Repositorio GitHub](https://github.com/RafaelJaime/Bro-VS-SiS-game)
