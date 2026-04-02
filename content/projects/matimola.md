@@ -1,5 +1,5 @@
 +++
-date = '2026-04-02T00:00:00+01:00'
+date = '2026-03-26T00:00:00+01:00'
 draft = false
 title = 'MatiMola.es - Portfolio and Landing Page'
 description = 'Vite-based website for a portfolio and landing page focused on attracting clients through a contact form handled with Formizee'
