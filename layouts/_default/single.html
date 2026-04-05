@@ -35,6 +35,15 @@
   {{- end }}
 
   <footer class="post-footer">
+    {{- if .Date }}
+    <div style="font-size: 0.9em; color: var(--secondary); margin-bottom: 0.8rem;">{{ .Date | time.Format (default ":date_long" site.Params.DateFormat) }}
+      {{- if .Lastmod }}
+        {{- if (ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02")) }}
+      <span style="margin-left: 0.5rem;">({{ i18n "last_edit" | default "last edit" }}: {{ .Lastmod | time.Format (default ":date_long" site.Params.DateFormat) }})</span>
+        {{- end }}
+      {{- end }}
+    </div>
+    {{- end }}
     {{- if .Params.tags }}
     <ul class="post-tags">
       {{- range ($.GetTerms "tags") }}
