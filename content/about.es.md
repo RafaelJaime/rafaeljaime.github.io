@@ -1,6 +1,7 @@
 +++
 date = '2025-09-03T12:53:12+02:00'
 draft = false
+hideMeta = true
 translationKey = 'about'
 +++
 
