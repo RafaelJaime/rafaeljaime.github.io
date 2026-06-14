@@ -145,6 +145,12 @@ translationKey = 'about'
 
   <!-- Timeline Items -->
   <div style="position: relative; margin-bottom: 2.5rem; z-index: 1;">
+    <time style="display: inline-block; font-size: 1rem; color: var(--secondary); margin-bottom: 0.5rem; font-weight: 500;">2026 – Present</time>
+    <h3 style="color: var(--primary); margin: 0 0 0.3rem 0; font-size: 1.3rem; font-weight: 500; line-height: 1.3;">Software Developer — Harmonia</h3>
+    <p style="color: var(--secondary); margin: 0; font-size: 0.95rem; font-style: italic;">PopCoach — AI-powered app to support people in their work and personal life · React Native, Expo, TypeScript, Supabase</p>
+  </div>
+
+  <div style="position: relative; margin-bottom: 2.5rem; z-index: 1;">
     <time style="display: inline-block; font-size: 1rem; color: var(--secondary); margin-bottom: 0.5rem; font-weight: 500;">2024–2025</time>
     <h3 style="color: var(--primary); margin: 0 0 0.3rem 0; font-size: 1.3rem; font-weight: 500; line-height: 1.3;">Advanced Vocational Training in Artificial Intelligence & Big Data</h3>
     <p style="color: var(--secondary); margin: 0; font-size: 0.95rem; font-style: italic;">IES Rafael Alberti — Machine Learning, Spark, Python for Analytics</p>
